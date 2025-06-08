@@ -5,15 +5,15 @@ export default function Page() {
   const [person, setPerson] = useState('Alice');
   const [bio, setBio] = useState(null);
   useEffect(() => {
-    let ignore = false;
+    let isCurrent = true;
     setBio(null);
     fetchBio(person).then((result) => {
-      if (!ignore) {
+      if (isCurrent) {
         setBio(result);
       }
     });
     return () => {
-      ignore = true;
+      isCurrent = false;
     };
   }, [person]);
 
