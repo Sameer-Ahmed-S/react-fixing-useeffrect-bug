@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchBio } from "./api.js";
 
 export default function Page() {
-  const [person, setPerson] = useState("Alice");
+  const [person, setPerson] = useState('Alice');
   const [bio, setBio] = useState(null);
   useEffect(() => {
     let ignore = false;
